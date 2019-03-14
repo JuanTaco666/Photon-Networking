@@ -9,6 +9,8 @@ public class PlayerNetwork : MonoBehaviour {
 
     private PhotonView photonView;
 
+    public int playerHealth = 100;
+
     private void Start()
     {
         photonView = GetComponent<PhotonView>();
@@ -34,4 +36,30 @@ public class PlayerNetwork : MonoBehaviour {
 
 
     }
+
+    private void Update()
+    {
+        if (!photonView.isMine)
+        {
+            return;
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            playerHealth -= 5;
+        }
+    }
+
+    private void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info){
+        //sending data
+        if (stream.isWriting)
+        {
+            stream.SendNext(playerHealth);
+        }
+        //recieveing data
+        else if (stream.isReading)
+        {
+            playerHealth = (int)stream.ReceiveNext();
+        }
+    }
+        
 }

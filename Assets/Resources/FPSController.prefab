@@ -323,12 +323,13 @@ MonoBehaviour:
   group: 0
   OwnerShipWasTransfered: 0
   prefixBackup: -1
-  synchronization: 3
+  synchronization: 2
   onSerializeTransformOption: 3
   onSerializeRigidBodyOption: 2
   ownershipTransfer: 0
   ObservedComponents:
   - {fileID: 114683449975513060}
+  - {fileID: 114047732776526824}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1
@@ -348,6 +349,7 @@ MonoBehaviour:
   playerCamera: {fileID: 1276239213711952}
   playerControlScripts:
   - {fileID: 114176694270427218}
+  playerHealth: 100
 --- !u!114 &114176694270427218
 MonoBehaviour:
   m_ObjectHideFlags: 1
